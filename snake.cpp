@@ -18,3 +18,18 @@ void snake::draw()
         printw("%c",part.getCharacter());
     }
 }
+
+void snake::turn(direction dir)
+{
+    switch(dir)
+    {
+    case up:
+        break;
+    case down:
+        break;
+    case left:
+        break;
+    case right:
+        break;
+    }
+}
