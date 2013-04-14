@@ -6,7 +6,6 @@ snakepart::snakepart()
 {
     xPos = 1;
     yPos = 1;
-    color = 0;
     character = '@';
 }
 
@@ -14,7 +13,6 @@ snakepart::snakepart(int x, int y)
 {
     xPos = x;
     yPos = y;
-    color = 0;
     character = '@';
 }
 
@@ -35,11 +33,6 @@ void snakepart::setPos(point pos)
     yPos = pos.y;
 }
 
-void snakepart::setColor(int colorCode)
-{
-    color = colorCode;
-}
-
 bool snakepart::isAt(int x, int y)
 {
     if(x == xPos && y == yPos)
@@ -58,11 +51,6 @@ point snakepart::getPos()
     Pos.x = xPos;
     Pos.y = yPos;
     return Pos;
-}
-
-int snakepart::getColor()
-{
-    return color;
 }
 
 int snakepart::getX()

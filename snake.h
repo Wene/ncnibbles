@@ -5,23 +5,29 @@
 #include "snakepart.h"
 #include <ncurses.h>
 
-enum direction
-{
-    up,
-    down,
-    left,
-    right
-};
 
 class snake
 {
 public:
     snake();
+    enum direction
+    {
+        up,
+        down,
+        left,
+        right,
+    };
     void draw();
-    void turn(direction dir);
+    void turn(direction nextDir);
+    void moveOneStep();
+    void setColor(int col);
+    short getColor();
+
 
 private:
     std::vector<snakepart> parts;
+    short color;
+    direction dir;
 };
 
 #endif // SNAKE_H
