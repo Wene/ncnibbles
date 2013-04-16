@@ -15,12 +15,12 @@ public:
         up,
         down,
         left,
-        right,
+        right
     };
     void draw();
     void turn(direction nextDir);
     void moveOneStep();
-    void setColor(int col);
+    void setColor(short col);
     short getColor();
 
 

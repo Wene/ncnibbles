@@ -40,7 +40,6 @@ int main()
         }
         s1.moveOneStep();
     }
-    getch();
     endwin();
     return 0;
 }

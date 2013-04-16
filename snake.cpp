@@ -74,7 +74,7 @@ void snake::moveOneStep()
     parts.pop_back();
 }
 
-void snake::setColor(int col)
+void snake::setColor(short col)
 {
     color = col;
 }
