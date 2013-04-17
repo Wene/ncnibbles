@@ -16,6 +16,13 @@ snakepart::snakepart(int x, int y)
     character = '@';
 }
 
+snakepart::snakepart(point pos)
+{
+    xPos = pos.x;
+    yPos = pos.y;
+    character = '@';
+}
+
 void snakepart::setCharacter(char ch)
 {
     character = ch;

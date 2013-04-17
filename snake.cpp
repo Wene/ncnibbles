@@ -1,23 +1,40 @@
 #include "snake.h"
 
-snake::snake()
+snake::snake(int startX, int startY, direction startDir, short startColorPair)
 {
-    color = COLOR_YELLOW;
-    for(int i = 0; i < 20; i++)
+    colorPair = startColorPair;
+    dir = startDir;
+    for(int i = 0; i < 5; i++)
     {
-        snakepart part(30+i,5);
+        point pos;
+        pos.x = startX;
+        pos.y = startY;
+        switch(dir)
+        {
+        case left:
+            pos.x += i;
+            break;
+        case right:
+            pos.x -= i;
+            break;
+        case up:
+            pos.y += i;
+            break;
+        case down:
+            pos.y -= i;
+            break;
+        }
+        snakepart part(pos);
         parts.push_back(part);
     }
-    dir = left;
 }
 
 void snake::draw()
 {
-    init_pair(1,color,COLOR_BLACK);
+    color_set(colorPair,0);
     for(unsigned int i = 0; i < parts.size(); i++)
     {
         snakepart part = parts.at(i);
-        color_set(1,0);
         move(part.getY(), part.getX());
         printw("%c",part.getCharacter());
     }
@@ -74,12 +91,12 @@ void snake::moveOneStep()
     parts.pop_back();
 }
 
-void snake::setColor(short col)
+void snake::setColorPair(short col)
 {
-    color = col;
+    colorPair = col;
 }
 
-short snake::getColor()
+short snake::getColorPair()
 {
-    return color;
+    return colorPair;
 }

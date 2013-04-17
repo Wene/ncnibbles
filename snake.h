@@ -9,7 +9,6 @@
 class snake
 {
 public:
-    snake();
     enum direction
     {
         up,
@@ -17,16 +16,17 @@ public:
         left,
         right
     };
+    snake(int startX, int startY, direction startDir, short startColorPair);
     void draw();
     void turn(direction nextDir);
     void moveOneStep();
-    void setColor(short col);
-    short getColor();
+    void setColorPair(short col);
+    short getColorPair();
 
 
 private:
     std::vector<snakepart> parts;
-    short color;
+    short colorPair;
     direction dir;
 };
 

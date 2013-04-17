@@ -11,6 +11,7 @@ class snakepart
 public:
     snakepart();
     snakepart(int x, int y);
+    snakepart(point pos);
     void setPos(int x, int y);
     void setPos(point pos);
     void setCharacter(char ch);
