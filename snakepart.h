@@ -15,7 +15,7 @@ public:
     void setPos(int x, int y);
     void setPos(point pos);
     void setCharacter(char ch);
-    bool isAt(int x, int y);
+    bool isAt(point pos);
     point getPos();
     int getX();
     int getY();

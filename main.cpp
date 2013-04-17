@@ -88,6 +88,16 @@ int main()
         }
         s1.moveOneStep();
         s2.moveOneStep();
+        if(s1.checkSelfCollision() || s2.checkSelfCollision())
+        {
+            usleep(500*1000);
+        }
+        if(s1.checkForeignCollision(s2.getHeadPosition()) ||
+                s2.checkForeignCollision(s1.getHeadPosition()))
+        {
+            usleep(1000*1000);
+        }
+
     }
     endwin();
     return 0;

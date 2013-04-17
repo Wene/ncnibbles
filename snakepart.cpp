@@ -40,9 +40,9 @@ void snakepart::setPos(point pos)
     yPos = pos.y;
 }
 
-bool snakepart::isAt(int x, int y)
+bool snakepart::isAt(point pos)
 {
-    if(x == xPos && y == yPos)
+    if(xPos == pos.x && yPos == pos.y)
     {
         return true;
     }

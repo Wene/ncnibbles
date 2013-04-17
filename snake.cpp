@@ -100,3 +100,36 @@ short snake::getColorPair()
 {
     return colorPair;
 }
+
+bool snake::checkSelfCollision()
+{
+    snakepart head = parts.at(0);
+    for(int i = 4; i < parts.size(); i++)
+    {
+        snakepart part = parts.at(i);
+        if(head.isAt(part.getPos()))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool snake::checkForeignCollision(point pos)
+{
+    for(int i = 0; i < parts.size(); i++)
+    {
+        snakepart part = parts.at(i);
+        if(part.isAt(pos))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+point snake::getHeadPosition()
+{
+    snakepart head = parts.at(0);
+    return head.getPos();
+}

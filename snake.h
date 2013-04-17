@@ -22,7 +22,9 @@ public:
     void moveOneStep();
     void setColorPair(short col);
     short getColorPair();
-
+    bool checkSelfCollision();
+    bool checkForeignCollision(point pos);
+    point getHeadPosition();
 
 private:
     std::vector<snakepart> parts;
