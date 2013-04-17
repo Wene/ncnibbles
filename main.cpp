@@ -1,12 +1,9 @@
 #include <ncurses.h>
 #include "snake.h"
 #include <unistd.h>
-#include <cstdlib>  //for rand()
-#include <time.h>
 
 int main()
 {
-    srand(time(NULL));
     initscr();
     noecho();
     keypad(stdscr, true);
