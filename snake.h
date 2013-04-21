@@ -26,6 +26,7 @@ public:
     bool checkSelfCollision();
     bool checkForeignCollision(point pos);
     point getHeadPosition();
+    unsigned int getPoints();
 
 private:
     std::vector<snakepart> parts;

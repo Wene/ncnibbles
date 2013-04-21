@@ -146,3 +146,8 @@ point snake::getHeadPosition()
     snakepart head = parts.at(0);
     return head.getPos();
 }
+
+unsigned int snake::getPoints()
+{
+    return parts.size() - 4;
+}

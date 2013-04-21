@@ -1,7 +1,7 @@
 #include <ncurses.h>
+#include <unistd.h>
 #include "snake.h"
 #include "snakefood.h"
-#include <unistd.h>
 
 int main()
 {
@@ -128,15 +128,29 @@ int main()
         //Collision detection
         if(s1.checkSelfCollision() || s2.checkSelfCollision())
         {
-            usleep(500*1000);
+            break;
         }
         if(s1.checkForeignCollision(s2.getHeadPosition()) ||
                 s2.checkForeignCollision(s1.getHeadPosition()))
         {
-            usleep(1000*1000);
+            break;
         }
-
     }
+    int midX = getmaxx(stdscr)/2;
+    int midY = getmaxy(stdscr)/2;
+    nodelay(stdscr, false);
+    color_set(3,0);
+    move(midY, midX-6);
+    printw(" game over ");
+    move(midY+1, midX);
+    printw(":");
+    color_set(1,0);
+    move(midY+1, midX-4);
+    printw("%i",s1.getPoints());
+    color_set(2,0);
+    move(midY+1, midX+1);
+    printw("%i",s2.getPoints());
+    getch();
     endwin();
     return 0;
 }
