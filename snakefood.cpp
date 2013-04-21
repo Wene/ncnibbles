@@ -6,6 +6,7 @@ snakefood::snakefood(short color)
     visible = true;
     symbol = '*';
     colorPair = color;
+    newPosition();
 }
 
 bool snakefood::isVisible()
@@ -26,10 +27,10 @@ point snakefood::getPosition()
     return pos;
 }
 
-point snakefood::newPosition(int xMax, int yMax)
+point snakefood::newPosition()
 {
-    xPos = rand() % xMax;
-    yPos = rand() % yMax;
+    xPos = rand() % getmaxx(stdscr);
+    yPos = rand() % getmaxy(stdscr);
     return getPosition();
 }
 

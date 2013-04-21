@@ -11,7 +11,7 @@ class snakefood
 public:
     snakefood(short color);
     point getPosition();
-    point newPosition(int xMax, int yMax);
+    point newPosition();
     bool isVisible();
     void setVisible(bool vis);
     void draw();

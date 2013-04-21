@@ -21,6 +21,7 @@ public:
     void turn(direction nextDir);
     void moveOneStep();
     void setColorPair(short col);
+    void grow();
     short getColorPair();
     bool checkSelfCollision();
     bool checkForeignCollision(point pos);
@@ -30,6 +31,7 @@ private:
     std::vector<snakepart> parts;
     short colorPair;
     direction dir;
+    bool bGrow;
 };
 
 #endif // SNAKE_H

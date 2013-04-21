@@ -27,6 +27,7 @@ snake::snake(int startX, int startY, direction startDir, short startColorPair)
         snakepart part(pos);
         parts.push_back(part);
     }
+    bGrow = false;
 }
 
 void snake::draw()
@@ -88,12 +89,24 @@ void snake::moveOneStep()
     snakepart newPart;
     newPart.setPos(pos);
     parts.insert(parts.begin(),newPart);
-    parts.pop_back();
+    if(!bGrow)
+    {
+        parts.pop_back();
+    }
+    else
+    {
+        bGrow = false;
+    }
 }
 
 void snake::setColorPair(short col)
 {
     colorPair = col;
+}
+
+void snake::grow()
+{
+    bGrow = true;
 }
 
 short snake::getColorPair()
@@ -104,7 +117,7 @@ short snake::getColorPair()
 bool snake::checkSelfCollision()
 {
     snakepart head = parts.at(0);
-    for(int i = 4; i < parts.size(); i++)
+    for(unsigned int i = 4; i < parts.size(); i++)
     {
         snakepart part = parts.at(i);
         if(head.isAt(part.getPos()))
@@ -117,7 +130,7 @@ bool snake::checkSelfCollision()
 
 bool snake::checkForeignCollision(point pos)
 {
-    for(int i = 0; i < parts.size(); i++)
+    for(unsigned int i = 0; i < parts.size(); i++)
     {
         snakepart part = parts.at(i);
         if(part.isAt(pos))

@@ -4,6 +4,17 @@
 struct point
 {
     int x, y;
+    bool operator==(point p1)
+    {
+        if(p1.x == x && p1.y == y)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 };
 
 class snakepart
