@@ -4,6 +4,10 @@ NCNIBBLES
 Copyright (C) 2013 by Wene <wene83@gmx.ch>
 This Software comes without any warranty under the terms of the WTFPL.
 
-compile with "g++ -o ncnibbles *.cpp -lncurses" or use qmake.
+Ncnibbles is a 2 player snake game for the terminal. It uses Ncurses.
+
+Play with the cursor keys and W-A-S-D. Press ESC to quit.
+
+Compile with "g++ -o ncnibbles *.cpp -lncurses" or use qmake.
 I've created this peace of software using Qt Creator but without 
 using Qt libraries. It only requires C++ STL and ncurses.
