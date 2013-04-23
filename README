@@ -1,0 +1,9 @@
+NCNIBBLES
+---------
+
+Copyright (C) 2013 by Wene <wene83@gmx.ch>
+This Software comes without any warranty under the terms of the WTFPL.
+
+compile with "g++ -o ncnibbles *.cpp -lncurses" or use qmake.
+I've created this peace of software using Qt Creator but without 
+using Qt libraries. It only requires C++ STL and ncurses.
